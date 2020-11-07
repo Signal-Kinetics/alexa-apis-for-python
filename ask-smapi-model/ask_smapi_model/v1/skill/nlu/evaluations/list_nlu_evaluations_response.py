@@ -22,11 +22,11 @@ from ask_smapi_model.v1.skill.nlu.evaluations.paged_response import PagedRespons
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.nlu.evaluations.evaluation import EvaluationV1
-    from ask_smapi_model.v1.skill.nlu.evaluations.pagination_context import PaginationContextV1
-    from ask_smapi_model.v1.skill.nlu.evaluations.links import LinksV1
+    from ask_smapi_model.v1.skill.nlu.evaluations.links import Links as Links_f9f963f0
+    from ask_smapi_model.v1.skill.nlu.evaluations.evaluation import Evaluation as Evaluation_85d2851a
+    from ask_smapi_model.v1.skill.nlu.evaluations.pagination_context import PaginationContext as PaginationContext_281d8865
 
 
 class ListNLUEvaluationsResponse(PagedResponse):
@@ -56,7 +56,7 @@ class ListNLUEvaluationsResponse(PagedResponse):
     supports_multiple_types = False
 
     def __init__(self, pagination_context=None, links=None, evaluations=None):
-        # type: (Optional[PaginationContextV1], Optional[LinksV1], Optional[List[EvaluationV1]]) -> None
+        # type: (Optional[PaginationContext_281d8865], Optional[Links_f9f963f0], Optional[List[Evaluation_85d2851a]]) -> None
         """response body for a list evaluation API
 
         :param pagination_context: 

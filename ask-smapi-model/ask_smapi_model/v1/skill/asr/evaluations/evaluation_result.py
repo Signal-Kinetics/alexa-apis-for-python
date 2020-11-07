@@ -21,12 +21,12 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.asr.evaluations.evaluation_result_status import EvaluationResultStatusV1
-    from ask_smapi_model.v1.skill.asr.evaluations.error_object import ErrorObjectV1
-    from ask_smapi_model.v1.skill.asr.evaluations.annotation_with_audio_asset import AnnotationWithAudioAssetV1
-    from ask_smapi_model.v1.skill.asr.evaluations.evaluation_result_output import EvaluationResultOutputV1
+    from ask_smapi_model.v1.skill.asr.evaluations.annotation_with_audio_asset import AnnotationWithAudioAsset as AnnotationWithAudioAsset_102c10aa
+    from ask_smapi_model.v1.skill.asr.evaluations.evaluation_result_output import EvaluationResultOutput as EvaluationResultOutput_7d57585d
+    from ask_smapi_model.v1.skill.asr.evaluations.evaluation_result_status import EvaluationResultStatus as EvaluationResultStatus_2e2193d
+    from ask_smapi_model.v1.skill.asr.evaluations.error_object import ErrorObject as ErrorObject_27eea4fa
 
 
 class EvaluationResult(object):
@@ -60,7 +60,7 @@ class EvaluationResult(object):
     supports_multiple_types = False
 
     def __init__(self, status=None, annotation=None, output=None, error=None):
-        # type: (Optional[EvaluationResultStatusV1], Optional[AnnotationWithAudioAssetV1], Optional[EvaluationResultOutputV1], Optional[ErrorObjectV1]) -> None
+        # type: (Optional[EvaluationResultStatus_2e2193d], Optional[AnnotationWithAudioAsset_102c10aa], Optional[EvaluationResultOutput_7d57585d], Optional[ErrorObject_27eea4fa]) -> None
         """evaluation detailed result
 
         :param status: 

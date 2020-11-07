@@ -21,11 +21,11 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.certification.review_tracking_info import ReviewTrackingInfoV1
-    from ask_smapi_model.v1.skill.certification.certification_status import CertificationStatusV1
-    from ask_smapi_model.v1.skill.certification.certification_result import CertificationResultV1
+    from ask_smapi_model.v1.skill.certification.certification_status import CertificationStatus as CertificationStatus_f3c4064f
+    from ask_smapi_model.v1.skill.certification.certification_result import CertificationResult as CertificationResult_84c93325
+    from ask_smapi_model.v1.skill.certification.review_tracking_info import ReviewTrackingInfo as ReviewTrackingInfo_efea7da2
 
 
 class CertificationResponse(object):
@@ -61,7 +61,7 @@ class CertificationResponse(object):
     supports_multiple_types = False
 
     def __init__(self, id=None, status=None, skill_submission_timestamp=None, review_tracking_info=None, result=None):
-        # type: (Optional[str], Optional[CertificationStatusV1], Optional[datetime], Optional[ReviewTrackingInfoV1], Optional[CertificationResultV1]) -> None
+        # type: (Optional[str], Optional[CertificationStatus_f3c4064f], Optional[datetime], Optional[ReviewTrackingInfo_efea7da2], Optional[CertificationResult_84c93325]) -> None
         """
 
         :param id: Certification Id for the skill

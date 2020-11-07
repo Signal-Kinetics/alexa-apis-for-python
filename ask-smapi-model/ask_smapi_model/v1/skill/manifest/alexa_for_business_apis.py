@@ -21,11 +21,11 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.skill_manifest_endpoint import SkillManifestEndpointV1
-    from ask_smapi_model.v1.skill.manifest.alexa_for_business_interface import AlexaForBusinessInterfaceV1
-    from ask_smapi_model.v1.skill.manifest.region import RegionV1
+    from ask_smapi_model.v1.skill.manifest.alexa_for_business_interface import AlexaForBusinessInterface as AlexaForBusinessInterface_bc7084aa
+    from ask_smapi_model.v1.skill.manifest.skill_manifest_endpoint import SkillManifestEndpoint as SkillManifestEndpoint_b30bcc05
+    from ask_smapi_model.v1.skill.manifest.region import Region as Region_10de9595
 
 
 class AlexaForBusinessApis(object):
@@ -55,7 +55,7 @@ class AlexaForBusinessApis(object):
     supports_multiple_types = False
 
     def __init__(self, regions=None, endpoint=None, interfaces=None):
-        # type: (Optional[Dict[str, RegionV1]], Optional[SkillManifestEndpointV1], Optional[List[AlexaForBusinessInterfaceV1]]) -> None
+        # type: (Optional[Dict[str, Region_10de9595]], Optional[SkillManifestEndpoint_b30bcc05], Optional[List[AlexaForBusinessInterface_bc7084aa]]) -> None
         """Defines the structure of alexaForBusiness api in the skill manifest.
 
         :param regions: Contains an array of the supported &lt;region&gt; Objects.

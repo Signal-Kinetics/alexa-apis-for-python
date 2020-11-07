@@ -30,16 +30,16 @@ from ask_sdk_model.services.utils import user_agent_info
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.list_management.forbidden_error import ForbiddenError
-    from ask_sdk_model.services.list_management.alexa_lists_metadata import AlexaListsMetadata
-    from ask_sdk_model.services.list_management.alexa_list_item import AlexaListItem
-    from ask_sdk_model.services.list_management.update_list_request import UpdateListRequest
-    from ask_sdk_model.services.list_management.alexa_list_metadata import AlexaListMetadata
-    from ask_sdk_model.services.list_management.alexa_list import AlexaList
-    from ask_sdk_model.services.list_management.error import Error
-    from ask_sdk_model.services.list_management.create_list_item_request import CreateListItemRequest
-    from ask_sdk_model.services.list_management.update_list_item_request import UpdateListItemRequest
-    from ask_sdk_model.services.list_management.create_list_request import CreateListRequest
+    from ask_sdk_model.services.list_management.update_list_request import UpdateListRequest as UpdateListRequest_414a7d74
+    from ask_sdk_model.services.list_management.alexa_list import AlexaList as AlexaList_3da10cf7
+    from ask_sdk_model.services.list_management.alexa_lists_metadata import AlexaListsMetadata as AlexaListsMetadata_4de49d50
+    from ask_sdk_model.services.list_management.update_list_item_request import UpdateListItemRequest as UpdateListItemRequest_72b7a2bf
+    from ask_sdk_model.services.list_management.create_list_request import CreateListRequest as CreateListRequest_9fe258ce
+    from ask_sdk_model.services.list_management.create_list_item_request import CreateListItemRequest as CreateListItemRequest_1aaa675f
+    from ask_sdk_model.services.list_management.error import Error as Error_6c6937d8
+    from ask_sdk_model.services.list_management.alexa_list_item import AlexaListItem as AlexaListItem_6fd31314
+    from ask_sdk_model.services.list_management.forbidden_error import ForbiddenError as ForbiddenError_56e425c5
+    from ask_sdk_model.services.list_management.alexa_list_metadata import AlexaListMetadata as AlexaListMetadata_bfa5b64c
 
 
 class ListManagementServiceClient(BaseServiceClient):
@@ -60,14 +60,14 @@ class ListManagementServiceClient(BaseServiceClient):
         self.user_agent = user_agent_info(sdk_version="1.0.0", custom_user_agent=custom_user_agent)
 
     def get_lists_metadata(self, **kwargs):
-        # type: (**Any) -> Union[ApiResponse, ForbiddenError, Error, AlexaListsMetadata]
+        # type: (**Any) -> Union[ApiResponse, object, ForbiddenError_56e425c5, Error_6c6937d8, AlexaListsMetadata_4de49d50]
         """
         Retrieves the metadata for all customer lists, including the customer’s default lists. 
 
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, ForbiddenError, Error, AlexaListsMetadata]
+        :rtype: Union[ApiResponse, object, ForbiddenError_56e425c5, Error_6c6937d8, AlexaListsMetadata_4de49d50]
         """
         operation_name = "get_lists_metadata"
         params = locals()
@@ -75,7 +75,7 @@ class ListManagementServiceClient(BaseServiceClient):
             params[key] = val
         del params['kwargs']
 
-        resource_path = '/v2/householdlists/'
+        resource_path = '/v2/householdlists'
         resource_path = resource_path.replace('{format}', 'json')
 
         path_params = {}  # type: Dict
@@ -116,9 +116,10 @@ class ListManagementServiceClient(BaseServiceClient):
         if full_response:
             return api_response
         return api_response.body
+        
 
     def delete_list(self, list_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, Error]
+        # type: (str, **Any) -> Union[ApiResponse, object, Error_6c6937d8]
         """
         This API deletes a customer custom list.
 
@@ -127,7 +128,7 @@ class ListManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, Error]
+        :rtype: Union[ApiResponse, object, Error_6c6937d8]
         """
         operation_name = "delete_list"
         params = locals()
@@ -139,7 +140,7 @@ class ListManagementServiceClient(BaseServiceClient):
             raise ValueError(
                 "Missing the required parameter `list_id` when calling `" + operation_name + "`")
 
-        resource_path = '/v2/householdlists/{listId}/'
+        resource_path = '/v2/householdlists/{listId}'
         resource_path = resource_path.replace('{format}', 'json')
 
         path_params = {}  # type: Dict
@@ -184,9 +185,10 @@ class ListManagementServiceClient(BaseServiceClient):
         if full_response:
             return api_response
         
+        return None
 
     def delete_list_item(self, list_id, item_id, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, Error]
+        # type: (str, str, **Any) -> Union[ApiResponse, object, Error_6c6937d8]
         """
         This API deletes an item in the specified list.
 
@@ -197,7 +199,7 @@ class ListManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, Error]
+        :rtype: Union[ApiResponse, object, Error_6c6937d8]
         """
         operation_name = "delete_list_item"
         params = locals()
@@ -213,7 +215,7 @@ class ListManagementServiceClient(BaseServiceClient):
             raise ValueError(
                 "Missing the required parameter `item_id` when calling `" + operation_name + "`")
 
-        resource_path = '/v2/householdlists/{listId}/items/{itemId}/'
+        resource_path = '/v2/householdlists/{listId}/items/{itemId}'
         resource_path = resource_path.replace('{format}', 'json')
 
         path_params = {}  # type: Dict
@@ -260,9 +262,10 @@ class ListManagementServiceClient(BaseServiceClient):
         if full_response:
             return api_response
         
+        return None
 
     def get_list_item(self, list_id, item_id, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, AlexaListItem, Error]
+        # type: (str, str, **Any) -> Union[ApiResponse, object, Error_6c6937d8, AlexaListItem_6fd31314]
         """
         This API can be used to retrieve single item with in any list by listId and itemId. This API can read list items from an archived list. Attempting to read list items from a deleted list return an ObjectNotFound 404 error. 
 
@@ -273,7 +276,7 @@ class ListManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, AlexaListItem, Error]
+        :rtype: Union[ApiResponse, object, Error_6c6937d8, AlexaListItem_6fd31314]
         """
         operation_name = "get_list_item"
         params = locals()
@@ -289,7 +292,7 @@ class ListManagementServiceClient(BaseServiceClient):
             raise ValueError(
                 "Missing the required parameter `item_id` when calling `" + operation_name + "`")
 
-        resource_path = '/v2/householdlists/{listId}/items/{itemId}/'
+        resource_path = '/v2/householdlists/{listId}/items/{itemId}'
         resource_path = resource_path.replace('{format}', 'json')
 
         path_params = {}  # type: Dict
@@ -336,9 +339,10 @@ class ListManagementServiceClient(BaseServiceClient):
         if full_response:
             return api_response
         return api_response.body
+        
 
     def update_list_item(self, list_id, item_id, update_list_item_request, **kwargs):
-        # type: (str, str, UpdateListItemRequest, **Any) -> Union[ApiResponse, AlexaListItem, Error]
+        # type: (str, str, UpdateListItemRequest_72b7a2bf, **Any) -> Union[ApiResponse, object, Error_6c6937d8, AlexaListItem_6fd31314]
         """
         API used to update an item value or item status.
 
@@ -351,7 +355,7 @@ class ListManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, AlexaListItem, Error]
+        :rtype: Union[ApiResponse, object, Error_6c6937d8, AlexaListItem_6fd31314]
         """
         operation_name = "update_list_item"
         params = locals()
@@ -371,7 +375,7 @@ class ListManagementServiceClient(BaseServiceClient):
             raise ValueError(
                 "Missing the required parameter `update_list_item_request` when calling `" + operation_name + "`")
 
-        resource_path = '/v2/householdlists/{listId}/items/{itemId}/'
+        resource_path = '/v2/householdlists/{listId}/items/{itemId}'
         resource_path = resource_path.replace('{format}', 'json')
 
         path_params = {}  # type: Dict
@@ -421,9 +425,10 @@ class ListManagementServiceClient(BaseServiceClient):
         if full_response:
             return api_response
         return api_response.body
+        
 
     def create_list_item(self, list_id, create_list_item_request, **kwargs):
-        # type: (str, CreateListItemRequest, **Any) -> Union[ApiResponse, AlexaListItem, Error]
+        # type: (str, CreateListItemRequest_1aaa675f, **Any) -> Union[ApiResponse, object, Error_6c6937d8, AlexaListItem_6fd31314]
         """
         This API creates an item in an active list or in a default list.
 
@@ -434,7 +439,7 @@ class ListManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, AlexaListItem, Error]
+        :rtype: Union[ApiResponse, object, Error_6c6937d8, AlexaListItem_6fd31314]
         """
         operation_name = "create_list_item"
         params = locals()
@@ -450,7 +455,7 @@ class ListManagementServiceClient(BaseServiceClient):
             raise ValueError(
                 "Missing the required parameter `create_list_item_request` when calling `" + operation_name + "`")
 
-        resource_path = '/v2/householdlists/{listId}/items/'
+        resource_path = '/v2/householdlists/{listId}/items'
         resource_path = resource_path.replace('{format}', 'json')
 
         path_params = {}  # type: Dict
@@ -498,9 +503,10 @@ class ListManagementServiceClient(BaseServiceClient):
         if full_response:
             return api_response
         return api_response.body
+        
 
     def update_list(self, list_id, update_list_request, **kwargs):
-        # type: (str, UpdateListRequest, **Any) -> Union[ApiResponse, Error, AlexaListMetadata]
+        # type: (str, UpdateListRequest_414a7d74, **Any) -> Union[ApiResponse, object, Error_6c6937d8, AlexaListMetadata_bfa5b64c]
         """
         This API updates a custom list. Only the list name or state can be updated. An Alexa customer can turn an archived list into an active one. 
 
@@ -511,7 +517,7 @@ class ListManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, Error, AlexaListMetadata]
+        :rtype: Union[ApiResponse, object, Error_6c6937d8, AlexaListMetadata_bfa5b64c]
         """
         operation_name = "update_list"
         params = locals()
@@ -527,7 +533,7 @@ class ListManagementServiceClient(BaseServiceClient):
             raise ValueError(
                 "Missing the required parameter `update_list_request` when calling `" + operation_name + "`")
 
-        resource_path = '/v2/householdlists/{listId}/'
+        resource_path = '/v2/householdlists/{listId}'
         resource_path = resource_path.replace('{format}', 'json')
 
         path_params = {}  # type: Dict
@@ -576,9 +582,10 @@ class ListManagementServiceClient(BaseServiceClient):
         if full_response:
             return api_response
         return api_response.body
+        
 
     def get_list(self, list_id, status, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, AlexaList, Error]
+        # type: (str, str, **Any) -> Union[ApiResponse, object, Error_6c6937d8, AlexaList_3da10cf7]
         """
         Retrieves the list metadata including the items in the list with requested status. 
 
@@ -589,7 +596,7 @@ class ListManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, AlexaList, Error]
+        :rtype: Union[ApiResponse, object, Error_6c6937d8, AlexaList_3da10cf7]
         """
         operation_name = "get_list"
         params = locals()
@@ -605,7 +612,7 @@ class ListManagementServiceClient(BaseServiceClient):
             raise ValueError(
                 "Missing the required parameter `status` when calling `" + operation_name + "`")
 
-        resource_path = '/v2/householdlists/{listId}/{status}/'
+        resource_path = '/v2/householdlists/{listId}/{status}'
         resource_path = resource_path.replace('{format}', 'json')
 
         path_params = {}  # type: Dict
@@ -653,9 +660,10 @@ class ListManagementServiceClient(BaseServiceClient):
         if full_response:
             return api_response
         return api_response.body
+        
 
     def create_list(self, create_list_request, **kwargs):
-        # type: (CreateListRequest, **Any) -> Union[ApiResponse, Error, AlexaListMetadata]
+        # type: (CreateListRequest_9fe258ce, **Any) -> Union[ApiResponse, object, Error_6c6937d8, AlexaListMetadata_bfa5b64c]
         """
         This API creates a custom list. The new list name must be different than any existing list name. 
 
@@ -664,7 +672,7 @@ class ListManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, Error, AlexaListMetadata]
+        :rtype: Union[ApiResponse, object, Error_6c6937d8, AlexaListMetadata_bfa5b64c]
         """
         operation_name = "create_list"
         params = locals()
@@ -676,7 +684,7 @@ class ListManagementServiceClient(BaseServiceClient):
             raise ValueError(
                 "Missing the required parameter `create_list_request` when calling `" + operation_name + "`")
 
-        resource_path = '/v2/householdlists/'
+        resource_path = '/v2/householdlists'
         resource_path = resource_path.replace('{format}', 'json')
 
         path_params = {}  # type: Dict
@@ -722,3 +730,4 @@ class ListManagementServiceClient(BaseServiceClient):
         if full_response:
             return api_response
         return api_response.body
+        

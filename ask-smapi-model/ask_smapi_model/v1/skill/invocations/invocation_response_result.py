@@ -21,10 +21,10 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.invocations.skill_execution_info import SkillExecutionInfoV1
-    from ask_smapi_model.v1.skill.standardized_error import StandardizedErrorV1
+    from ask_smapi_model.v1.skill.invocations.skill_execution_info import SkillExecutionInfo as SkillExecutionInfo_a72238cf
+    from ask_smapi_model.v1.skill.standardized_error import StandardizedError as StandardizedError_f5106a89
 
 
 class InvocationResponseResult(object):
@@ -48,7 +48,7 @@ class InvocationResponseResult(object):
     supports_multiple_types = False
 
     def __init__(self, skill_execution_info=None, error=None):
-        # type: (Optional[SkillExecutionInfoV1], Optional[StandardizedErrorV1]) -> None
+        # type: (Optional[SkillExecutionInfo_a72238cf], Optional[StandardizedError_f5106a89]) -> None
         """
 
         :param skill_execution_info: 

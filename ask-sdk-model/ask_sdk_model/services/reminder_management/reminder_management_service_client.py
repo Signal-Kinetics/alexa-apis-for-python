@@ -30,11 +30,11 @@ from ask_sdk_model.services.utils import user_agent_info
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.reminder_management.get_reminders_response import GetRemindersResponse
-    from ask_sdk_model.services.reminder_management.get_reminder_response import GetReminderResponse
-    from ask_sdk_model.services.reminder_management.reminder_response import ReminderResponse
-    from ask_sdk_model.services.reminder_management.reminder_request import ReminderRequest
-    from ask_sdk_model.services.reminder_management.error import Error
+    from ask_sdk_model.services.reminder_management.get_reminders_response import GetRemindersResponse as GetRemindersResponse_6fac8e34
+    from ask_sdk_model.services.reminder_management.get_reminder_response import GetReminderResponse as GetReminderResponse_bbe3cb02
+    from ask_sdk_model.services.reminder_management.error import Error as Error_2f79b984
+    from ask_sdk_model.services.reminder_management.reminder_request import ReminderRequest as ReminderRequest_85a375af
+    from ask_sdk_model.services.reminder_management.reminder_response import ReminderResponse as ReminderResponse_a3c43231
 
 
 class ReminderManagementServiceClient(BaseServiceClient):
@@ -55,7 +55,7 @@ class ReminderManagementServiceClient(BaseServiceClient):
         self.user_agent = user_agent_info(sdk_version="1.0.0", custom_user_agent=custom_user_agent)
 
     def delete_reminder(self, alert_token, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, Error]
+        # type: (str, **Any) -> Union[ApiResponse, object, Error_2f79b984]
         """
         This API is invoked by the skill to delete a single reminder. 
 
@@ -64,7 +64,7 @@ class ReminderManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, Error]
+        :rtype: Union[ApiResponse, object, Error_2f79b984]
         """
         operation_name = "delete_reminder"
         params = locals()
@@ -120,9 +120,10 @@ class ReminderManagementServiceClient(BaseServiceClient):
         if full_response:
             return api_response
         
+        return None
 
     def get_reminder(self, alert_token, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, GetReminderResponse, Error]
+        # type: (str, **Any) -> Union[ApiResponse, object, Error_2f79b984, GetReminderResponse_bbe3cb02]
         """
         This API is invoked by the skill to get a single reminder. 
 
@@ -131,7 +132,7 @@ class ReminderManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, GetReminderResponse, Error]
+        :rtype: Union[ApiResponse, object, Error_2f79b984, GetReminderResponse_bbe3cb02]
         """
         operation_name = "get_reminder"
         params = locals()
@@ -187,9 +188,10 @@ class ReminderManagementServiceClient(BaseServiceClient):
         if full_response:
             return api_response
         return api_response.body
+        
 
     def update_reminder(self, alert_token, reminder_request, **kwargs):
-        # type: (str, ReminderRequest, **Any) -> Union[ApiResponse, ReminderResponse, Error]
+        # type: (str, ReminderRequest_85a375af, **Any) -> Union[ApiResponse, object, Error_2f79b984, ReminderResponse_a3c43231]
         """
         This API is invoked by the skill to update a reminder. 
 
@@ -200,7 +202,7 @@ class ReminderManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, ReminderResponse, Error]
+        :rtype: Union[ApiResponse, object, Error_2f79b984, ReminderResponse_a3c43231]
         """
         operation_name = "update_reminder"
         params = locals()
@@ -264,16 +266,17 @@ class ReminderManagementServiceClient(BaseServiceClient):
         if full_response:
             return api_response
         return api_response.body
+        
 
     def get_reminders(self, **kwargs):
-        # type: (**Any) -> Union[ApiResponse, GetRemindersResponse, Error]
+        # type: (**Any) -> Union[ApiResponse, object, Error_2f79b984, GetRemindersResponse_6fac8e34]
         """
         This API is invoked by the skill to get a all reminders created by the caller. 
 
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, GetRemindersResponse, Error]
+        :rtype: Union[ApiResponse, object, Error_2f79b984, GetRemindersResponse_6fac8e34]
         """
         operation_name = "get_reminders"
         params = locals()
@@ -281,7 +284,7 @@ class ReminderManagementServiceClient(BaseServiceClient):
             params[key] = val
         del params['kwargs']
 
-        resource_path = '/v1/alerts/reminders/'
+        resource_path = '/v1/alerts/reminders'
         resource_path = resource_path.replace('{format}', 'json')
 
         path_params = {}  # type: Dict
@@ -323,9 +326,10 @@ class ReminderManagementServiceClient(BaseServiceClient):
         if full_response:
             return api_response
         return api_response.body
+        
 
     def create_reminder(self, reminder_request, **kwargs):
-        # type: (ReminderRequest, **Any) -> Union[ApiResponse, ReminderResponse, Error]
+        # type: (ReminderRequest_85a375af, **Any) -> Union[ApiResponse, object, Error_2f79b984, ReminderResponse_a3c43231]
         """
         This API is invoked by the skill to create a new reminder. 
 
@@ -334,7 +338,7 @@ class ReminderManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, ReminderResponse, Error]
+        :rtype: Union[ApiResponse, object, Error_2f79b984, ReminderResponse_a3c43231]
         """
         operation_name = "create_reminder"
         params = locals()
@@ -346,7 +350,7 @@ class ReminderManagementServiceClient(BaseServiceClient):
             raise ValueError(
                 "Missing the required parameter `reminder_request` when calling `" + operation_name + "`")
 
-        resource_path = '/v1/alerts/reminders/'
+        resource_path = '/v1/alerts/reminders'
         resource_path = resource_path.replace('{format}', 'json')
 
         path_params = {}  # type: Dict
@@ -393,3 +397,4 @@ class ReminderManagementServiceClient(BaseServiceClient):
         if full_response:
             return api_response
         return api_response.body
+        

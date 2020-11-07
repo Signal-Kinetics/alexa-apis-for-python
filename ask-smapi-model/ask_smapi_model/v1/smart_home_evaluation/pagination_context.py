@@ -21,30 +21,43 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
 
 
-class AudioAssetDownloadUrlExpiryTime(object):
+class PaginationContext(object):
     """
-    Timestamp when the audio download url expire in ISO 8601 format
 
-
+    :param next_token: 
+    :type next_token: (optional) str
+    :param total_count: 
+    :type total_count: (optional) int
 
     """
     deserialized_types = {
+        'next_token': 'str',
+        'total_count': 'int'
     }  # type: Dict
 
     attribute_map = {
+        'next_token': 'nextToken',
+        'total_count': 'totalCount'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self):
-        # type: () -> None
-        """Timestamp when the audio download url expire in ISO 8601 format
+    def __init__(self, next_token=None, total_count=None):
+        # type: (Optional[str], Optional[int]) -> None
+        """
 
+        :param next_token: 
+        :type next_token: (optional) str
+        :param total_count: 
+        :type total_count: (optional) int
         """
         self.__discriminator_value = None  # type: str
+
+        self.next_token = next_token
+        self.total_count = total_count
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -89,7 +102,7 @@ class AudioAssetDownloadUrlExpiryTime(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, AudioAssetDownloadUrlExpiryTime):
+        if not isinstance(other, PaginationContext):
             return False
 
         return self.__dict__ == other.__dict__

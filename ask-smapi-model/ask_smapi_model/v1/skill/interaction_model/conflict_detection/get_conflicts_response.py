@@ -22,10 +22,11 @@ from ask_smapi_model.v1.skill.interaction_model.conflict_detection.paged_respons
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.conflict_detection.pagination_context import PaginationContextV1
-    from ask_smapi_model.v1.links import LinksV1
+    from ask_smapi_model.v1.skill.interaction_model.conflict_detection.pagination_context import PaginationContext as PaginationContext_25fb50cf
+    from ask_smapi_model.v1.links import Links as Links_bc43467b
+    from ask_smapi_model.v1.skill.interaction_model.conflict_detection.get_conflicts_response_result import GetConflictsResponseResult as GetConflictsResponseResult_a3ae2661
 
 
 class GetConflictsResponse(PagedResponse):
@@ -35,31 +36,38 @@ class GetConflictsResponse(PagedResponse):
     :type pagination_context: (optional) ask_smapi_model.v1.skill.interaction_model.conflict_detection.pagination_context.PaginationContext
     :param links: 
     :type links: (optional) ask_smapi_model.v1.links.Links
+    :param results: 
+    :type results: (optional) list[ask_smapi_model.v1.skill.interaction_model.conflict_detection.get_conflicts_response_result.GetConflictsResponseResult]
 
     """
     deserialized_types = {
         'pagination_context': 'ask_smapi_model.v1.skill.interaction_model.conflict_detection.pagination_context.PaginationContext',
-        'links': 'ask_smapi_model.v1.links.Links'
+        'links': 'ask_smapi_model.v1.links.Links',
+        'results': 'list[ask_smapi_model.v1.skill.interaction_model.conflict_detection.get_conflicts_response_result.GetConflictsResponseResult]'
     }  # type: Dict
 
     attribute_map = {
         'pagination_context': 'paginationContext',
-        'links': '_links'
+        'links': '_links',
+        'results': 'results'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, pagination_context=None, links=None):
-        # type: (Optional[PaginationContextV1], Optional[LinksV1]) -> None
+    def __init__(self, pagination_context=None, links=None, results=None):
+        # type: (Optional[PaginationContext_25fb50cf], Optional[Links_bc43467b], Optional[List[GetConflictsResponseResult_a3ae2661]]) -> None
         """
 
         :param pagination_context: 
         :type pagination_context: (optional) ask_smapi_model.v1.skill.interaction_model.conflict_detection.pagination_context.PaginationContext
         :param links: 
         :type links: (optional) ask_smapi_model.v1.links.Links
+        :param results: 
+        :type results: (optional) list[ask_smapi_model.v1.skill.interaction_model.conflict_detection.get_conflicts_response_result.GetConflictsResponseResult]
         """
         self.__discriminator_value = None  # type: str
 
         super(GetConflictsResponse, self).__init__(pagination_context=pagination_context, links=links)
+        self.results = results
 
     def to_dict(self):
         # type: () -> Dict[str, object]

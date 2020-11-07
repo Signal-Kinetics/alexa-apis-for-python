@@ -21,12 +21,12 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.amazonpay.model.v1.authorize_attributes import AuthorizeAttributesV1
-    from ask_sdk_model.interfaces.amazonpay.model.v1.payment_action import PaymentActionV1
-    from ask_sdk_model.interfaces.amazonpay.model.v1.seller_order_attributes import SellerOrderAttributesV1
-    from ask_sdk_model.interfaces.amazonpay.model.v1.provider_attributes import ProviderAttributesV1
+    from ask_sdk_model.interfaces.amazonpay.model.v1.authorize_attributes import AuthorizeAttributes as AuthorizeAttributes_cafc473f
+    from ask_sdk_model.interfaces.amazonpay.model.v1.payment_action import PaymentAction as PaymentAction_a31213dd
+    from ask_sdk_model.interfaces.amazonpay.model.v1.seller_order_attributes import SellerOrderAttributes as SellerOrderAttributes_fead92a0
+    from ask_sdk_model.interfaces.amazonpay.model.v1.provider_attributes import ProviderAttributes as ProviderAttributes_717593b1
 
 
 class ChargeAmazonPay(object):
@@ -72,7 +72,7 @@ class ChargeAmazonPay(object):
     supports_multiple_types = False
 
     def __init__(self, consent_token=None, seller_id=None, billing_agreement_id=None, payment_action=None, authorize_attributes=None, seller_order_attributes=None, provider_attributes=None):
-        # type: (Optional[str], Optional[str], Optional[str], Optional[PaymentActionV1], Optional[AuthorizeAttributesV1], Optional[SellerOrderAttributesV1], Optional[ProviderAttributesV1]) -> None
+        # type: (Optional[str], Optional[str], Optional[str], Optional[PaymentAction_a31213dd], Optional[AuthorizeAttributes_cafc473f], Optional[SellerOrderAttributes_fead92a0], Optional[ProviderAttributes_717593b1]) -> None
         """Charge Amazon Pay Request Object
 
         :param consent_token: Authorization token that contains the permissions consented to by the user.

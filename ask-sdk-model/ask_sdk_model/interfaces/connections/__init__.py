@@ -15,6 +15,7 @@
 from __future__ import absolute_import
 
 from .connections_request import ConnectionsRequest
+from .on_completion import OnCompletion
 from .connections_status import ConnectionsStatus
 from .send_response_directive import SendResponseDirective
 from .send_request_directive import SendRequestDirective

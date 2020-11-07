@@ -22,7 +22,7 @@ from abc import ABCMeta, abstractmethod
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
 
 
@@ -70,6 +70,8 @@ class Request(object):
         | Alexa.Presentation.HTML.Message: :py:class:`ask_sdk_model.interfaces.alexa.presentation.html.message_request.MessageRequest`,
         |
         | LaunchRequest: :py:class:`ask_sdk_model.launch_request.LaunchRequest`,
+        |
+        | Alexa.Authorization.Grant: :py:class:`ask_sdk_model.authorization.authorization_grant_request.AuthorizationGrantRequest`,
         |
         | Reminders.ReminderCreated: :py:class:`ask_sdk_model.services.reminder_management.reminder_created_event_request.ReminderCreatedEventRequest`,
         |
@@ -137,7 +139,9 @@ class Request(object):
         |
         | AlexaSkillEvent.SkillPermissionAccepted: :py:class:`ask_sdk_model.events.skillevents.permission_accepted_request.PermissionAcceptedRequest`,
         |
-        | PlaybackController.NextCommandIssued: :py:class:`ask_sdk_model.interfaces.playbackcontroller.next_command_issued_request.NextCommandIssuedRequest`
+        | PlaybackController.NextCommandIssued: :py:class:`ask_sdk_model.interfaces.playbackcontroller.next_command_issued_request.NextCommandIssuedRequest`,
+        |
+        | Alexa.Presentation.APLA.RuntimeError: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apla.runtime_error_event.RuntimeErrorEvent`
 
     """
     deserialized_types = {
@@ -169,6 +173,7 @@ class Request(object):
         'CustomInterfaceController.Expired': 'ask_sdk_model.interfaces.custom_interface_controller.expired_request.ExpiredRequest',
         'Alexa.Presentation.HTML.Message': 'ask_sdk_model.interfaces.alexa.presentation.html.message_request.MessageRequest',
         'LaunchRequest': 'ask_sdk_model.launch_request.LaunchRequest',
+        'Alexa.Authorization.Grant': 'ask_sdk_model.authorization.authorization_grant_request.AuthorizationGrantRequest',
         'Reminders.ReminderCreated': 'ask_sdk_model.services.reminder_management.reminder_created_event_request.ReminderCreatedEventRequest',
         'Alexa.Presentation.APLT.UserEvent': 'ask_sdk_model.interfaces.alexa.presentation.aplt.user_event.UserEvent',
         'AlexaHouseholdListEvent.ItemsUpdated': 'ask_sdk_model.services.list_management.list_items_updated_event_request.ListItemsUpdatedEventRequest',
@@ -202,7 +207,8 @@ class Request(object):
         'Connections.Request': 'ask_sdk_model.interfaces.connections.connections_request.ConnectionsRequest',
         'System.ExceptionEncountered': 'ask_sdk_model.interfaces.system.exception_encountered_request.ExceptionEncounteredRequest',
         'AlexaSkillEvent.SkillPermissionAccepted': 'ask_sdk_model.events.skillevents.permission_accepted_request.PermissionAcceptedRequest',
-        'PlaybackController.NextCommandIssued': 'ask_sdk_model.interfaces.playbackcontroller.next_command_issued_request.NextCommandIssuedRequest'
+        'PlaybackController.NextCommandIssued': 'ask_sdk_model.interfaces.playbackcontroller.next_command_issued_request.NextCommandIssuedRequest',
+        'Alexa.Presentation.APLA.RuntimeError': 'ask_sdk_model.interfaces.alexa.presentation.apla.runtime_error_event.RuntimeErrorEvent'
     }
 
     json_discriminator_key = "type"

@@ -21,12 +21,12 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.nlu.evaluations.inputs import InputsV1
-    from ask_smapi_model.v1.skill.nlu.evaluations.results_status import ResultsStatusV1
-    from ask_smapi_model.v1.skill.nlu.evaluations.expected import ExpectedV1
-    from ask_smapi_model.v1.skill.nlu.evaluations.actual import ActualV1
+    from ask_smapi_model.v1.skill.nlu.evaluations.expected import Expected as Expected_2f82531a
+    from ask_smapi_model.v1.skill.nlu.evaluations.results_status import ResultsStatus as ResultsStatus_97dfe1c9
+    from ask_smapi_model.v1.skill.nlu.evaluations.inputs import Inputs as Inputs_9b28fd7a
+    from ask_smapi_model.v1.skill.nlu.evaluations.actual import Actual as Actual_3f8509da
 
 
 class TestCase(object):
@@ -58,7 +58,7 @@ class TestCase(object):
     supports_multiple_types = False
 
     def __init__(self, status=None, inputs=None, actual=None, expected=None):
-        # type: (Optional[ResultsStatusV1], Optional[InputsV1], Optional[ActualV1], Optional[List[ExpectedV1]]) -> None
+        # type: (Optional[ResultsStatus_97dfe1c9], Optional[Inputs_9b28fd7a], Optional[Actual_3f8509da], Optional[List[Expected_2f82531a]]) -> None
         """
 
         :param status: 

@@ -21,14 +21,12 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
 
 
-class AudioAssetDownloadUrl(object):
+class SHCapabilityResponse(object):
     """
-    S3 presigned download url for downloading the audio file
-
 
 
     """
@@ -41,7 +39,7 @@ class AudioAssetDownloadUrl(object):
 
     def __init__(self):
         # type: () -> None
-        """S3 presigned download url for downloading the audio file
+        """
 
         """
         self.__discriminator_value = None  # type: str
@@ -89,7 +87,7 @@ class AudioAssetDownloadUrl(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, AudioAssetDownloadUrl):
+        if not isinstance(other, SHCapabilityResponse):
             return False
 
         return self.__dict__ == other.__dict__

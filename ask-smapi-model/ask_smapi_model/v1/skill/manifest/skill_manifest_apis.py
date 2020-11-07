@@ -21,16 +21,16 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.smart_home_apis import SmartHomeApisV1
-    from ask_smapi_model.v1.skill.manifest.health_apis import HealthApisV1
-    from ask_smapi_model.v1.skill.manifest.flash_briefing_apis import FlashBriefingApisV1
-    from ask_smapi_model.v1.skill.manifest.alexa_for_business_apis import AlexaForBusinessApisV1
-    from ask_smapi_model.v1.skill.manifest.music_apis import MusicApisV1
-    from ask_smapi_model.v1.skill.manifest.video_apis import VideoApisV1
-    from ask_smapi_model.v1.skill.manifest.custom_apis import CustomApisV1
-    from ask_smapi_model.v1.skill.manifest.house_hold_list import HouseHoldListV1
+    from ask_smapi_model.v1.skill.manifest.smart_home_apis import SmartHomeApis as SmartHomeApis_768def7d
+    from ask_smapi_model.v1.skill.manifest.music_apis import MusicApis as MusicApis_7489e85c
+    from ask_smapi_model.v1.skill.manifest.alexa_for_business_apis import AlexaForBusinessApis as AlexaForBusinessApis_8e9dbc0
+    from ask_smapi_model.v1.skill.manifest.custom_apis import CustomApis as CustomApis_e197110a
+    from ask_smapi_model.v1.skill.manifest.health_apis import HealthApis as HealthApis_d9db5b60
+    from ask_smapi_model.v1.skill.manifest.house_hold_list import HouseHoldList as HouseHoldList_76371b75
+    from ask_smapi_model.v1.skill.manifest.video_apis import VideoApis as VideoApis_f912969c
+    from ask_smapi_model.v1.skill.manifest.flash_briefing_apis import FlashBriefingApis as FlashBriefingApis_a7aeebab
 
 
 class SkillManifestApis(object):
@@ -80,7 +80,7 @@ class SkillManifestApis(object):
     supports_multiple_types = False
 
     def __init__(self, flash_briefing=None, custom=None, smart_home=None, video=None, alexa_for_business=None, health=None, household_list=None, music=None):
-        # type: (Optional[FlashBriefingApisV1], Optional[CustomApisV1], Optional[SmartHomeApisV1], Optional[VideoApisV1], Optional[AlexaForBusinessApisV1], Optional[HealthApisV1], Optional[HouseHoldListV1], Optional[MusicApisV1]) -> None
+        # type: (Optional[FlashBriefingApis_a7aeebab], Optional[CustomApis_e197110a], Optional[SmartHomeApis_768def7d], Optional[VideoApis_f912969c], Optional[AlexaForBusinessApis_8e9dbc0], Optional[HealthApis_d9db5b60], Optional[HouseHoldList_76371b75], Optional[MusicApis_7489e85c]) -> None
         """Defines the structure for implemented apis information in the skill manifest.
 
         :param flash_briefing: 
